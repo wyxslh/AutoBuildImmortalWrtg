@@ -20,7 +20,7 @@ if [ ! -f "$SETTINGS_FILE" ]; then
     echo "PPPoE settings file not found. Skipping." >>$LOGFILE
 else
     # 读取pppoe信息($enable_pppoe、$pppoe_account、$pppoe_password)
-    . "$SETTINGS_FILE"
+    。 "$SETTINGS_FILE"
 fi
 
 # 1. 先获取所有物理接口列表
@@ -185,7 +185,7 @@ uci commit
 
 # 设置编译作者信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="Packaged by wukongdaily"
+NEW_DESCRIPTION="Packaged by 灵妖妖柒"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 # 若luci-app-advancedplus (进阶设置)已安装 则去除zsh的调用 防止命令行报 /usb/bin/zsh: not found的提示
